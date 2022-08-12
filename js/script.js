@@ -11,14 +11,14 @@ elForm.addEventListener("submit", function(evt) {
   let inputValue = elInput.value;
   let selectValue = elSelect.value;
 
-  const ctof = (inputValue * 9/5) + 32;
-  const ctok = inputValue + 273.15;
+  const ctof = ((inputValue * 9/5) + 32).toFixed(2);
+  const ctok = (inputValue + 273.15).toFixed(2);
 
-  const ftoc = (inputValue - 32) * 5/9;
-  const ftok = (inputValue - 32) * 5/9 + 273.15;
+  const ftoc = ((inputValue - 32) * 5/9).toFixed(2);
+  const ftok = ((inputValue - 32) * 5/9 + 273.15).toFIxed(2);
 
-  const ktoc = inputValue - 273.15;
-  const ktof = (inputValue - 273.15) * 9/5 + 32;
+  const ktoc = (inputValue - 273.15).toFixed(2);
+  const ktof = ((inputValue - 273.15) * 9/5 + 32).toFixed(2);
 
   if (selectValue === "celsius"){
     elResult1.textContent = "Fahrenheit - " + ctof + "°F";
