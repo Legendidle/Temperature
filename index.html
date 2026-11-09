@@ -4,47 +4,45 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#212529">
   <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
   <title>Temperature</title>
+  <style>
+    html, body { min-height: 100%; background-color: #212529; }
+    .intro { min-height: 100vh; min-height: 100dvh; }
+    .intro__form, .intro__list { max-width: 420px; margin-left: auto; margin-right: auto; }
+    /* 16px+ font stops iOS Safari from zooming in when an input is focused */
+    .intro__form .form-select, .intro__form .form-control { font-size: 1.125rem; }
+    .intro__title { font-size: clamp(1.5rem, 6vw, 2.5rem); }
+  </style>
 </head>
 <body>
-  <section class="intro mt-5 pt-5 bg-dark pb-5">
+  <section class="intro bg-dark py-5 px-3">
     <div class="container-md">
       <div class="intro__inner">
-        <h1 class="intro__title mt-5 text-danger mb-5 text-center">Please, enter number</h1>
-  
-        <form class="intro__form text-center d-flex align-items-center flex-column mb-5" method="get" action="">
-          <select class="intro__select mb-3" aria-label="Default select example" required>
-            <option selected>Please, select temperature type</option>
-            
-            <option value="celsius">Celsius</option>
-            
-            <option value="fahrenheit">Fahrenheit</option>
+        <h1 class="intro__title mt-3 mt-md-5 text-danger mb-4 mb-md-5 text-center">Please, enter number</h1>
 
+        <form class="intro__form text-center d-flex flex-column gap-3 mb-4" method="get" action="">
+          <select class="intro__select form-select form-select-lg" aria-label="Temperature type" required>
+            <option value="" selected disabled>Please, select temperature type</option>
+            <option value="celsius">Celsius</option>
+            <option value="fahrenheit">Fahrenheit</option>
             <option value="kelvin">Kelvin</option>
           </select>
 
-          <label class="mb-3">
-            <input class="intro__input" type="number" placeholder="Temperature" aria-label="Temperature" aria-describedby="addon-wrapping" required>
-          </label>  
+          <input class="intro__input form-control form-control-lg" type="number" step="any" placeholder="Temperature" aria-label="Temperature" required>
 
-          <button type="submit" class="btn btn-primary mb-3 w-25">Convert</button>
-
-          <button type="reset" class="btn btn-danger w-25">Cancel</button>
+          <button type="submit" class="btn btn-primary btn-lg w-100">Convert</button>
+          <button type="reset" class="btn btn-danger btn-lg w-100">Cancel</button>
         </form>
-        
-        
-        <ul class="list-group intro__list list-unstyled d-flex bg-light">
-          <li class="list-group-item intro__item-1 text-success text-center">
-          </li>
-  
-          <li class="list-group-item intro__item-2 text-success text-center"></li>
-        </ul>  
+
+        <ul class="list-group intro__list">
+          <li class="list-group-item intro__item-1 text-success text-center fs-5"></li>
+          <li class="list-group-item intro__item-2 text-success text-center fs-5"></li>
+        </ul>
       </div>
     </div>
   </section>
-
-
 
   <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="./js/script.js"></script>
